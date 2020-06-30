@@ -34,8 +34,9 @@ bot = Discordrb::Bot.new token: "#{ARGV[0]}"
 puts "Invite this bot from #{bot.invite_url}"
 
 bot.message() do |event|
-    if event.message.content.split(' ')[0] == ".enchant"
-        event.respond event.message.content.split(' ')[1..-1].join('  ').gsub(/\w/, translate) 
+    msg = event.message.content.split(' ')
+    if msg[0] == ".enchant" && msg.length() >= 2
+        event.respond msg[1..-1].join('  ').gsub(/\w/, translate) 
     end
 end
 
