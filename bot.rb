@@ -36,7 +36,7 @@ puts "Invite this bot from #{bot.invite_url}"
 bot.message() do |event|
     msg = event.message.content.split(' ')
     if msg[0] == ".enchant" && msg.length() >= 2
-        event.respond msg[1..-1].join('  ').gsub(/\w/, translate) 
+        event.respond msg[1..-1].join('  ').gsub(/[A-Za-z]/, translate) 
     end
 end
 
