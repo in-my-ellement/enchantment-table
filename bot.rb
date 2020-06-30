@@ -30,7 +30,7 @@ translate = {
     "z" => "⨅" 
 }
 
-bot = Discordrb::Bot.new token: 'token'
+bot = Discordrb::Bot.new token: "#{ARGV[0]}"
 puts "Invite this bot from #{bot.invite_url}"
 
 bot.message() do |event|
